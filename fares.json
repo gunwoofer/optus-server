@@ -1,0 +1,105 @@
+{
+    "fares":
+    [
+        {
+            "name": "1 trip",
+            "include747": false,
+            "price": {
+                "student": 2.50,
+                "senior": 1.25,
+                "none": 3.50
+            }
+        },
+        {
+            "name": "2 trip",
+            "include747": false,
+            "price": {
+                "student": 4.50,
+                "senior": 2.25,
+                "none": 6.50
+            }
+        },
+        {
+            "name": "Unlimited evening",
+            "include747": false,
+            "price": {
+                "student": 5.75,
+                "senior": 5.75,
+                "none": 5.75
+            }
+        },
+        {
+            "name": "Unlimited weekend",
+            "include747": true,
+            "price": {
+                "student": 14.75,
+                "senior": 14.75,
+                "none": 14.75
+            }
+        },
+        {
+            "name": "10 trips",
+            "include747": false,
+            "price": {
+                "student": 21,
+                "senior": 10.50,
+                "none": 31.50
+            }
+        },
+        {
+            "name": "24h",
+            "include747": true,
+            "price": {
+                "student": 11,
+                "senior": 11,
+                "none": 11
+            }
+        },
+        {
+            "name": "YUL Aeroport 747",
+            "include747": true,
+            "price": {
+                "student": 11,
+                "senior": 11,
+                "none": 11
+            }
+        },
+        {
+            "name": "3 days",
+            "include747": true,
+            "price": {
+                "student": 21.25,
+                "senior": 21.25,
+                "none": 21.25
+            }
+        },
+        {
+            "name": "Weekly",
+            "include747": true,
+            "price": {
+                "student": 17.50,
+                "senior": 8.75,
+                "none": 29
+            }
+        },
+        {
+            "name": "YUL Aeroport 747",
+            "include747": true,
+            "price": {
+                "student": 11,
+                "senior": 11,
+                "none": 11
+            }
+        },
+        {
+            "name": "Monthly",
+            "include747": true,
+            "price": {
+                "student": 56.50,
+                "senior": 28.25,
+                "none": 94
+            }
+        }
+
+    ]
+}
