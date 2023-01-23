@@ -1,5 +1,4 @@
 import pytest
-from datetime import date, timedelta
 
 from optus_server.optimize import divide_date_by_month, divide_date_by_week
 
