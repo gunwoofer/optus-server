@@ -1,3 +1,5 @@
 my_env/
 __pycache__/
 optus_server.egg-info/
+venv/
+.vscode/

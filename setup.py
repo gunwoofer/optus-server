@@ -8,4 +8,9 @@ setup(
         'Flask',
         'Flask-Cors',
     ],
+    extras_require={
+        'test': [
+            'pytest'
+        ]
+    }
 )
