@@ -34,6 +34,8 @@ def entree_optimize(dateArrivee, dateDepart, categorieAge):
 
 list()
 def optimize(date_by_month, date_by_week, date_by_day, categorieAge, nbTrajets, solution=None):
+    if len(date_by_day) == 0:
+        return
     if solution is None:
         solution = []
     prices_by_travel = get_price_by_travel(date_by_month, date_by_week, date_by_day, categorieAge, nbTrajets)
@@ -55,8 +57,32 @@ def optimize(date_by_month, date_by_week, date_by_day, categorieAge, nbTrajets, 
                 best_index = type_ticket
     
     # On connait maintenant le meilleur ticket, il faut update les differents calendrier
-    #TODO: Update les differents calendrier et reappeler la fonction. Ne pas oublier de mettre a jour le nombre de voyage pas day si necessaire
+
     test = 5
+    solution.append(best_index)
+    if best_index == FARES_MONTH:
+        dates_to_remove = date_by_month[index_week_or_month]
+        for date_to_remove in dates_to_remove:
+            date_by_day = [date for date in date_by_day if date != date_to_remove]
+            date_by_week = [[date for date in dates if date != date_to_remove] for dates in date_by_week],
+            del date_by_month[index_week_or_month]
+    if best_index == FARES_WEEKLY:
+        dates_to_remove = date_by_month[index_week_or_month]
+        for date_to_remove in dates_to_remove:
+            date_by_day = [date for date in date_by_day if date != date_to_remove]
+            date_by_month = [[date for date in dates if date != date_to_remove] for dates in date_by_month],
+            del date_by_week[index_week_or_month]
+    if best_index == FARES_DAY:
+        date_to_remove = date_by_day[0]
+        date_by_week = [date for date in date_by_week if date != date_to_remove]
+        date_by_month = [[date for date in dates if date != date_to_remove] for dates in date_by_month],
+        del date_by_week[0]
+
+    # TODO: Gerer les date par tickets. Mettre a jour le nb de noyage par day
+
+    optimize(date_by_month, date_by_week, date_by_day, categorieAge, nbTrajets, solution=solution)
+
+    return solution
     
 
 def divide_date_by_month(arrival_date, departure_date):
